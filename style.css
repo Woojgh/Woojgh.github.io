@@ -1,0 +1,69 @@
+ p {
+  text: 20px;
+ color: white;
+ background-color: rgba(76, 60, 90, 0.6);
+ text-indent: 30px;
+ border-radius: 25px;
+}
+h4 {
+  color: cornsilk;
+  background-color: maroon;
+  text-align: center;
+  width:1000px;
+  font-size: 40px;
+}
+body {
+  background: url("https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/17201439_1216006078518297_6392763934826693892_n.jpg?oh=f5701773af4aa97b2620a22db353c0e0&oe=596C0C23");
+  background-repeat: repeat;
+  width:1000px;
+  background-position: center;
+}
+h2 {
+  background-color: maroon;
+  color: cornsilk;
+  font-style: bold;
+}
+.box {
+  margin-left: 330px;
+}
+.sectiontitle {
+  text-align: center;
+  width:1000px;
+}
+.right {
+  position:absolute;
+  right: 0;
+  width: 500px;
+  padding: 10px;
+  text-align: right;
+}
+
+.left {
+  position:absolute;
+  left: 0;
+  width:33%;
+  padding:10px;
+}
+.sectionparent{
+  width:1000px;
+  height:300px;
+  position:relative;
+}
+.section1{
+  text-align: center;
+  color: cornsilk;
+  background-color: #002045;
+  background-position: center;
+  height: 86px;
+  width: 750px;
+  margin: auto;
+  border-radius: 25px;
+}
+.inline{
+  display: inline-block;
+}
+.awesome-picture {
+  text-align: center;
+  margin-left: 16em;
+  border-radius: 50%;
+}
