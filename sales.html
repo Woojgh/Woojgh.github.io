@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Crumble Sales</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Griffy" rel="stylesheet">
+  </head>
+  <body id="body">
+    <header>
+      <section>
+        <div>
+          <img src="salmoncookies.png"/ class="mainFIsh">
+        </div>
+         <div>
+            <h1>Crumble FIsh</h1>
+          </div>
+        <div>
+          <nav>
+            <ul>
+              <li class="navBar"><a href="index.html"><img class="navBar" src="rounFishIcon.png">Home</a></li>
+              <li class="navBar"><a href="sales.html"><img class="navBar" src="rounFishIcon.png">Sales</a></li>
+              <li class="navBar"><a href="fakePage.html"><img class="navBar" src="rounFishIcon.png">Flounder</a></li>
+              <li class="navBar"><a href="http://www.goat-simulator.com/"><img class="navBar" src="goatIcon.jpg">GoatFIsh</a></li>          
+            </ul>
+          </nav>
+        </div>
+      </section>
+    </header>
+    <form method="get" id="the-form">
+      <fieldset>
+        <li>
+          <label for="storeName">Store Name:</label>
+          <input type="text" maxlength="15"  name="storeName" id="storeName" required/>
+        </li>
+
+        <li>
+          <label for="minCust">Min.Crusties Per Day:</label>
+        <input type="number" name="minCust" id="minCust" min="0" required />
+        </li>
+        <li>
+          <label for="maxCust">Max. Crusties Per Day:</label>
+          <input type="number" name="maxCust" id="maxCust" min="1" required />
+        </li>
+        <li>
+          <label for="avgCookieCust">Avg. Cookies per Crusty:</label> 
+          <input type="number" name="avgCookies" id="submit" step="0.01" min="1" required />
+        </li>
+
+        <li><button name="button" type="submit">Submit</button>
+        </li>
+        </fieldset>
+    </form>
+    <main>
+      <h3>Look @ my Cookies</h3>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,69 +1,79 @@
- p {
-  text: 20px;
- color: white;
- background-color: rgba(76, 60, 90, 0.6);
- text-indent: 30px;
- border-radius: 25px;
-}
-h4 {
-  color: cornsilk;
-  background-color: maroon;
-  text-align: center;
-  width:1000px;
-  font-size: 40px;
-}
 body {
-  background: url("https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/17201439_1216006078518297_6392763934826693892_n.jpg?oh=f5701773af4aa97b2620a22db353c0e0&oe=596C0C23");
-  background-repeat: repeat;
-  width:1000px;
-  background-position: center;
+    background-color: peru;
 }
-h2 {
-  background-color: maroon;
-  color: cornsilk;
-  font-style: bold;
+.highlight {
+  font-family: 'Griffy', cursive;
+  color: #ff4325;
 }
-.box {
-  margin-left: 330px;
+.data {
+  font-family: verdana;
+  color: #1010e8;
 }
-.sectiontitle {
-  text-align: center;
-  width:1000px;
-}
-.right {
-  position:absolute;
-  right: 0;
-  width: 500px;
-  padding: 10px;
-  text-align: right;
+header {
+  width: auto;
+  height: auto;
+  background-color: cornflowerblue;
+  border: 2px solid black;
+  border-radius: 24px;
 }
 
-.left {
-  position:absolute;
-  left: 0;
-  width:33%;
-  padding:10px;
+img.mainFIsh {
+  display: block;
+  margin: 10px auto 10px auto;
+  border-radius: 5em 10em 5em 10em / 10em 10em 10em 10em;
+
+
 }
-.sectionparent{
-  width:1000px;
-  height:300px;
-  position:relative;
+img.notFound {
+  width: auto;
 }
-.section1{
+li.navBar {
+  display: inline;
+  margin-right: 105px;
+  margin-left: 120px;
+}
+h1 {
   text-align: center;
-  color: cornsilk;
-  background-color: #002045;
-  background-position: center;
-  height: 86px;
-  width: 750px;
+  font-size: 4em;
+  font-family: 'Griffy', cursive;
   margin: auto;
-  border-radius: 25px;
 }
-.inline{
-  display: inline-block;
-}
-.awesome-picture {
+h3 {
+  font-family: 'Griffy', cursive;
   text-align: center;
-  margin-left: 16em;
-  border-radius: 50%;
+}
+
+table {
+  width: 80%;
+  margin: auto;
+  margin-top: 5px;
+  border: 2px solid black;
+  background-color: rgba(255, 235, 90, 0.9);
+}
+
+th {
+  font-size: 1.25em;
+}
+
+td {
+  border: 1px solid black;
+  text-align: center;
+  font-size: 2em;
+}
+form {
+  font-family: 'Griffy', cursive;
+}
+img {
+  display: block;
+  margin: 0px auto;
+}
+img.navBar {
+  display: inline;
+}
+#map {
+  height: 400px;
+  width: 50%;
+}
+h3.left {
+  text-align: left;
 }
