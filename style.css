@@ -1,79 +1,113 @@
 body {
-    background-color: peru;
+	respective:true;
+	background-image: url(https://images7.alphacoders.com/489/thumb-1920-489827.png);
+    height: 75%;
+    color: white;
+    font-family: 'Creepster', cursive;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 18px;
 }
-.highlight {
-  font-family: 'Griffy', cursive;
-  color: #ff4325;
-}
-.data {
-  font-family: verdana;
-  color: #1010e8;
-}
-header {
-  width: auto;
-  height: auto;
-  background-color: cornflowerblue;
-  border: 2px solid black;
-  border-radius: 24px;
-}
-
-img.mainFIsh {
-  display: block;
-  margin: 10px auto 10px auto;
-  border-radius: 5em 10em 5em 10em / 10em 10em 10em 10em;
-
+main {
+	padding-right:10px;
+	}
+div.canvasFix {
+	float:left;
+	height:60%;
+	z-index: 3;
 
 }
-img.notFound {
-  width: auto;
+p.welcome{
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #E5DA81;
+	color:#B83138;
+	position: absolute;
+	left: 38%;
+	top: 10%;
+	z-index: 2;
+	font-size: 80px;
 }
-li.navBar {
-  display: inline;
-  margin-right: 105px;
-  margin-left: 120px;
+p.busMall{
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #E5DA81;
+	color:#B83138;
+	position: absolute;
+	top:17%;
+	left: 47%;
+	z-index: 2;
+	font-size: 100px;
 }
-h1 {
-  text-align: center;
-  font-size: 4em;
-  font-family: 'Griffy', cursive;
-  margin: auto;
-}
-h3 {
-  font-family: 'Griffy', cursive;
-  text-align: center;
-}
-
-table {
-  width: 80%;
-  margin: auto;
-  margin-top: 5px;
-  border: 2px solid black;
-  background-color: rgba(255, 235, 90, 0.9);
-}
-
-th {
-  font-size: 1.25em;
-}
-
-td {
-  border: 1px solid black;
-  text-align: center;
-  font-size: 2em;
-}
-form {
-  font-family: 'Griffy', cursive;
+p {
+	text-align:center;
 }
 img {
-  display: block;
-  margin: 0px auto;
+	border-radius: 10px;
+	width:190px;
+	height:190px;
+	opacity:.7;
 }
-img.navBar {
-  display: inline;
+div.floatRight {
+	float:right;
 }
-#map {
-  height: 400px;
-  width: 50%;
+div.leftPic {
+	background-color: #761711;
+	width: 150px;
+	height: 150px;
+	margin: 20px;
+	border-radius: 10px;
 }
-h3.left {
-  text-align: left;
+div.centerPic {
+	background-color: #761711;
+	width: 150px;
+	height: 150px;
+	margin: 20px;
+	border-radius: 10px;
 }
+div.rightPic {
+	background-color: #761711;
+	width: 150px;
+	height: 150px;
+	margin: 20px;
+	border-radius: 10px;
+}
+.clearFix {
+	clear: both;
+}
+.grow{
+	 cursor: pointer;
+  transform-style: preserve-3d;
+	margin-bottom: 8px;
+    border-radius: 6px;
+    transition-property: background, border-radius;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+.grow:hover{
+	animation: spin 4s linear infinite;
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+    border-radius: 50%;
+}
+.welcome {
+	margin-left:100px;
+}
+/*.car{
+	width:150px;
+	height:150px;
+	text-align: center;
+	position:absolute;
+	top:50%;
+	left:36%;
+}*/
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+
