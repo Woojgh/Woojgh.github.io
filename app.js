@@ -4,7 +4,7 @@ var totalClicks = 0;
 var labelArray = [];
 var clickDataArray = [];
 var percentClicked = [];
-var clickLimit = 1;
+var clickLimit = 25;
 
 function Item(itemName, itemPath){
   this.itemName = itemName;
