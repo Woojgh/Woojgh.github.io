@@ -1,115 +1,157 @@
 'use strict';
+var itemsListArray = [];
+var totalClicks = 0;
+var labelArray = [];
+var clickDataArray = [];
+var percentClicked = [];
+var clickLimit = 1;
 
-var body = document.getElementsByTagName('body')[0];
-var storeHours = ['', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '8pm'];
-var allStores = [];
-
-var pike = new CookieStore('1st and Pike', 23, 65, 6.3);
-var seaTac = new CookieStore('SeaTac Airport', 3, 24, 1.2);
-var seaCenter = new CookieStore('Seattle Center', 11, 38, 3.7);
-var capHill = new CookieStore('Capitol Hill', 20, 38, 4.6);
-var alki = new CookieStore('Alki', 2, 16, 4.6);
-
-function CookieStore(name, minCust, maxCust, avgCookCust) {
-  this.name = name;
-  this.minCust = minCust;
-  this.maxCust = maxCust;
-  this.avgCookCust = avgCookCust;
-  this.hourlySalesArray = [];
-  this.total = 0;
-  this.randomCust = function() {
-    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
-  };
-  
-  
-  this.totalSales = function() {
-    for (var i = 0; i < storeHours.length; i++){
-      var allTheCookies = Math.floor(this.randomCust() * this.avgCookCust);
-      this.hourlySalesArray.push(allTheCookies);
-      this.total += allTheCookies;
-    }
-  };
-  this.createListRow = function() {
-    this.totalSales();
-    var table = document.getElementsByTagName('table')[0];    
-    var tRow = document.createElement('tr');
-    var tableBody = document.getElementById('table-body');
-    tableBody.appendChild(tRow);
-    var rowName = document.createElement('th');
-    rowName.innerText = this.name;
-    tRow.appendChild(rowName);
-    for(var i = 0; i < storeHours.length - 1; i++){
-      var newTD= document.createElement('td');
-      newTD.innerText = this.hourlySalesArray[i];
-      tRow.appendChild(newTD);
-    }
-  };
-  allStores.push(this);
+function Item(itemName, itemPath){
+  this.itemName = itemName;
+  this.itemPath = itemPath;
+  this.itemShownTotal = 0;
+  this.itemNumberClicked = 0;
+  itemsListArray.push(this);
 }
 
-function crumbleTable() {
-  var table = document.createElement('table');
-  body.appendChild(table);
-  var tableHead = document.createElement('thead');
-  table.appendChild(tableHead);
-  var tableRow = document.createElement('tr');
-  tableHead.appendChild(tableRow);
-  for (var i = 0; i < storeHours.length; i++){
-    var th = document.createElement('th');
-    th.innerText = storeHours[i];
-    tableRow.appendChild(th);
+//old items will fill oldUserPageArray, newUserPageArray will //compare to oldUserPageArray and have different results. itemListArray will hold list of all items
+var a = new Item ('bag', 'images/bag.jpg');
+var b = new Item ('banana', 'images/banana.jpg');
+var c = new Item ('bathroom', 'images/bathroom.jpg');
+var d = new Item ('boots', 'images/boots.jpg');
+var e = new Item ('breakfast', 'images/breakfast.jpg');
+var f = new Item ('bubblegum', 'images/bubblegum.jpg');
+var g = new Item ('chair', 'images/chair.jpg');
+var h = new Item ('chtulu', 'images/cthulhu.jpg');
+var i = new Item ('dog-duck', 'images/dog-duck.jpg');
+var j = new Item ('dragon', 'images/dragon.jpg');
+var k = new Item ('pen', 'images/pen.jpg');
+var l = new Item ('pet-sweep', 'images/pet-sweep.jpg');
+var m = new Item ('scissors', 'images/scissors.jpg');
+var n = new Item ('shark', 'images/shark.jpg');
+var o = new Item ('sweep', 'images/sweep.png');
+var p = new Item ('tauntaun', 'images/tauntaun.jpg');
+var q = new Item ('unicorn', 'images/unicorn.jpg');
+var r = new Item ('usb', 'images/usb.gif');
+var s = new Item ('water-can', 'images/water-can.jpg');
+var t = new Item ('wine glass', 'images/wine-glass.jpg');
+
+function randomImgIndex(){
+  return Math.floor(Math.random() * (itemsListArray.length));
+}
+var prevImgIndexes  = [];
+ 
+ function randomPicGenerate(){
+   var currentImgIndexes  = [];
+   while(currentImgIndexes.length < 3){
+     var randomImgSelecetVar = randomImgIndex();
+     if(!prevImgIndexes.includes(randomImgSelecetVar) && !currentImgIndexes.includes(randomImgSelecetVar)){
+       currentImgIndexes.push(randomImgSelecetVar);
+     }
+    }
+   var imageLeft = itemsListArray[currentImgIndexes[0]];
+   var imageCenter = itemsListArray[currentImgIndexes[1]];
+   var imageRight = itemsListArray[currentImgIndexes[2]];
+   img1.src = imageLeft.itemPath
+   img2.src = imageCenter.itemPath
+   img3.src = imageRight.itemPath
+   img1.alt = currentImgIndexes[0];
+   img2.alt = currentImgIndexes[1];
+   img3.alt = currentImgIndexes[2];  
+   prevImgIndexes = currentImgIndexes;
+   imageLeft.itemShownTotal++;
+   imageCenter.itemShownTotal++;
+   imageRight.itemShownTotal++;
   }
-  var tableBody = document.createElement('tBody');
-  table.appendChild(tableBody);
-  tableBody.id = 'table-body';
+
+ randomPicGenerate();
+
+ function clickHandle(event){
+  randomPicGenerate();
+  totalClicks++;
+  var productIdx = this.alt;
+  itemsListArray[productIdx].itemNumberClicked++;
+  //this.itemNumberClicked++;
+  if(totalClicks === clickLimit) {
+    localStorage.newClick = JSON.stringify(itemsListArray);
+    img1.removeEventListener('click', clickHandle);
+    img2.removeEventListener('click', clickHandle);
+    img3.removeEventListener('click', clickHandle);
+    img1.src = "http://i.imgur.com/zugsAYb.gif";
+    img2.src = "http://i.imgur.com/zugsAYb.gif";
+    img3.src = "http://i.imgur.com/zugsAYb.gif";
+    productClicks();
+
+  }
+
+ }
+ var percentTotal = [];
+
+ if(localStorage.newClick){
+  var newClickings = JSON.parse(localStorage.newClick);
+  for(var i = 0; i < newClickings.length; i++){
+    itemsListArray[i].itemNumberClicked = newClickings[i].itemNumberClicked;
+    itemsListArray[i].itemShownTotal = newClickings[i].itemShownTotal;
+  }
+ }
+//write a function that gives the percent of an item clicked when shown.
+
+ img1.addEventListener('click', clickHandle);
+ img2.addEventListener('click', clickHandle);
+ img3.addEventListener('click', clickHandle); 
+
+
+ function productClicks() {
+ var content = document.getElementById('content');
+ var ul = document.createElement('ul');
+ content.appendChild(ul);
+ for(var i = 0; i < itemsListArray.length; i++) {
+    clickDataArray.push(itemsListArray[i].itemNumberClicked);
+    labelArray.push(itemsListArray[i].itemName);
+    percentTotal.push((itemsListArray[i].itemShownTotal / itemsListArray[i].itemNumberClicked) * 100);
+
+ }
+
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+
+Chart.defaults.global.defaultFontColor = '#fff';
+var data = {
+    labels: labelArray,
+    datasets: [{
+      label: 'Times Clicked',
+      backgroundColor: "rgba(179,181,198,0.2)",
+            borderColor: "rgba(179,181,198,1)",
+            pointBackgroundColor: "rgba(179,181,198,1)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(179,181,198,1)",
+            data: clickDataArray
+    }, {
+      label: 'Percent Cliciked',
+      backgroundColor: "rgba(255,99,132,0.2)",
+            borderColor: "rgba(255,99,132,1)",
+            pointBackgroundColor: "rgba(255,99,132,1)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(255,99,132,1)",
+            data: percentTotal
+    }]
+  };
+
+  var myChart = new Chart(ctx, {
+    type: 'radar',
+    data: data,
+    options: {
+      responsive: true,
+      scales: {
+        reverse:true,
+        yAxes: [{
+          ticks: {
+            beginAtZero:true
+          }
+        }]
+      }
+    }
+  });
 }
-crumbleTable();
-
-for (var i = 0; i < allStores.length; i++) {
-  allStores[i].createListRow();
-}
-// function hourlyTotals() {
-//  var table = document.getElementById('table');
-//  var tableFoot = document.getElementById('tfoot');
-//  table.appendChild(tableFoot);
-//  var tr = document.createElement('tr');
-//  tableFoot.appendChild(tr);
-//  var th = document.createElement('th');
-//  tr.appendChild(th);
-//  for (var i = 0; i < storeHours.length - 2; i++) {
-//    var hrlyTtl = 0;
-//    for (var z = 0; z < allStores.length; z++) {
-//      hrlyTtl += allStores[z].hourlySalesArray[i];
-//    }
-//    var footTD = document.createElement('td');
-//    footTD.innerText = hrlyTtl;
-//    tr.appendChild(footTD);
-//  }
-//  var allTotals = 0;
-//  for (var j = 0; j < allStores.length; j++) {
-//    allTotals += allStores[i].total;
-//  }
-//  var totalTD = document.createElement('td');
-//  totalTD.innerText = allTotals;
-//  tr.appendChild(totalTD)
-// }
-
-// hourlyTotals();
-
-
-var form = document.getElementById('the-form');
-function createNewStore(event) {
- event.preventDefault();
-   var name = event.target.elements.storeName;
-   var minCust = event.target.elements.minCust;
-   var maxCust = event.target.elements.maxCust;
-   var storeAvg = event.target.elements.avgCookies;
-   if (maxCust < minCust) {
-     alert('The max number of crusties should not be larger then the min number of crusties.');
-   } else {
-     var newStore = new CookieStore(name.value, Math.floor(minCust.value), Math.floor(maxCust.value), storeAvg.value);
-     allStores[i].createListRow(newStore);
-     form.reset();
-   }
-}
-form.addEventListener('submit', createNewStore);

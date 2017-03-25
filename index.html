@@ -1,54 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-  	<link href="style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Griffy" rel="stylesheet">
-    <script src="https://use.fontawesome.com/eb5fc687c1.js"></script>
-    <title>Crumble Fish</title>
-  </head>
-  <body>
-  	<header>
-      <section>
-        <div>
-          <img src="salmoncookies.png" class="mainFIsh">
-        </div>
-        <div>
-          <h1>Crumble FIsh</h1>
-        </div>
-        <div>
-          <nav>
-            <ul>
-              <li class="navBar"><a href="index.html"><img class="navBar" src="rounFishIcon.png">Home</a></li>
-              <li class="navBar"><a href="sales.html"><img class="navBar" src="rounFishIcon.png">Sales</a></li>
-              <li class="navBar"><a href="fakePage.html"><img class="navBar" src="rounFishIcon.png">Flounder</a></li>
-              <li class="navBar"><a href="http://www.goat-simulator.com/"><img class="navBar" src="goatIcon.jpg">GoatFIsh</a></li>
-            </ul>
-          </nav>
-        </div>
-      </section>
-  	</header>
-    <main>
-      <img src="cookieHome.jpg">
-      <h3 class="left">Cookie Maps</h3>
-    <div id="map"></div>
-    <script>
-      function initMap() {
-        var seattle = {lat: 47.608013, lng: -122.335167};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 13,
-          center: seattle
-        });
-        var marker = new google.maps.Marker({
-          position: seattle,
-          map: map
-        });
-      }
-      </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQpdjCoAwxsVsTy60ZIT6g2B9SMvIFkZ8&callback=initMap">
-    </script>
-      <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10768.05828741494!2d-122.35781245000001!3d47.567504899999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1489980713460" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
-    </main>
-  </body>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link href="https://fonts.googleapis.com/css?family=Creepster" rel="stylesheet">
+	<title>Bus-Mall</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js" charset="utf-8"></script>
+</head>
+<body>
+	<p class="welcome">Welcome to</p>
+	<p class="busMall">Bus-Mall</p>
+	<main name="content" id="content">
+		<div class="floatRight">
+			<p>Please choose one:</p>
+			<div class="grow" class="leftPic">
+				<img class="grow" src="https://www.placehold.it/300" id="img1">
+			</div>
+			<div class="grow" class="centerPic">
+				<img class="grow" src="https://www.placehold.it/300" id="img2">
+			</div>
+			<div class="grow" class="rightPic">
+				<img class="grow" src="https://www.placehold.it/300" id="img3">
+			</div>
+			<div class="clearFix">
+			</div>
+		</div>
+	</main>
+	<div class="canvasFix">
+ 		<canvas class="canvasFix" id="canvas" width="500" height="500"></canvas>
+ 	</div>
+<!-- 	<img class="car" src="images/jurassicCar.png">   -->
+	<script type="text/javascript" src="app.js"></script>
+</body>
 </html>
