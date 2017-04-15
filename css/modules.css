@@ -1,0 +1,112 @@
+.site-header {
+  text-align: center;
+  background: url("/home/nostromos/Documents/projects/portfolio/images/fight.gif");
+  width:100%;
+}
+.fighter1 {
+  height: 19vw;
+  width: 19vw;
+}
+.fighter2 {
+  height: 18vw;
+  width: 13vw;
+}
+.fighter3 {
+  height:17vw;
+  width:13vw;
+}
+.heading-group-h1 {
+  float: left;
+  padding: 0 0 .2em 1em;
+}
+
+.icon-menu {
+  font-size: 3em;
+  float: right;
+}
+
+.nav-bar {
+  padding: 0.1em;
+}
+
+.nav-bar ul {
+  float: right;
+  display: none;
+  padding: 0;
+  list-style: none;
+  clear: both;
+}
+
+.nav-bar-click ul {
+  display: inline;
+}
+
+.nav-bar li {
+  display: inline;
+  margin-right: .4em;
+  font-size: 1.5em;
+  padding: .5em .2em;
+  border-bottom: 1px solid #ccc;
+}
+
+#filters {
+  padding: 0;
+  list-style: none;
+}
+
+.byline {
+  color: #777;
+}
+
+.byline a {
+  font-weight: bold;
+  text-decoration: none;
+}
+/*#footer{
+  width:80%;
+  height:20%;
+  background: url('https://s-media-cache-ak0.pinimg.com/originals/f9/a8/ed/f9a8ed161524ca06e0d5250fe2d33e51.gif');
+}*/
+
+@media only screen and (min-width: 640px) {
+
+  .nav-bar {
+    padding: .2em .2em .2em 2 em;
+  }
+  .nav-bar-ul {
+    display:block;
+  }
+
+  .nav-bar li {
+    display:block;
+    border-bottom: none;
+  }
+
+  .nav-bar ul li:hover a {
+    color: #29506D;
+  }
+  .heading-group-h1 {
+    padding: .1em .1em .1em 2em;
+    float: ;
+  }
+
+  #filters select {
+    width: 15em;
+    margin: .2em .2em;
+  }
+
+  #filters li {
+    width: 20em;
+    display: inline;
+  }
+
+}
+@media only screen and (min-width: 860px) {
+  .nav-bar-ul {
+    display: inline;
+  }
+  .nav-bar li {
+    display:inline;
+  }
+
+}
