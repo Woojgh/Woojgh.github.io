@@ -21,7 +21,7 @@ projectView.setTeasers = function() {
   });
 };
 
-$('#interactive_3d').interactive_3d({ frames: 30});
+$('#interactive3d').interactive3d({ frames: 30});
 
 
 $(document).ready(function() {
