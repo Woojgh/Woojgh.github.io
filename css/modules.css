@@ -75,19 +75,26 @@
 #fighterAbout {
   display:inline;
 }
-.fighterLeft {
+.fighter-left {
   height:15vw;
   left: 53vw;
   position: absolute;
   top: 20vw;
   width:11vw;
 }
-.fighterRight {
-  height: 16vw;
+.fighter-right {
+  height: 15vw;
   left: 23vw;
   position: absolute;
   top: 18.9vw;
   width: 11vw;
+}
+.fighter-right-hover {
+  height: 18vw;
+  left: 23vw;
+  position: absolute;
+  top: 16.9vw;
+  width: 39vw;
 }
 .footer{
   height:80%;
