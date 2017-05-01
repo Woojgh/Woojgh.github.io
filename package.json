@@ -1,13 +1,13 @@
 {
-  "name": "portfolio",
+  "name": "youhavemail",
   "version": "1.0.0",
-  "description": "This is my portfolio",
+  "description": "You hve mail",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
-    "nodemon": "^1.11.0",
-    "swagger-tools": "^0.10.1",
+    "node-uuid": "^1.4.8",
+    "twilio": "^2.11.1",
     "uuid": "^3.0.1"
   },
   "devDependencies": {},
@@ -17,12 +17,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Woojgh/portfolio.git"
+    "url": "git+https://github.com/amandakoster/YouHaveMail.git"
   },
-  "author": "James Salamonsen",
+  "keywords": [
+    "you",
+    "have",
+    "mail"
+  ],
+  "author": "james salamonsen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Woojgh/portfolio/issues"
+    "url": "https://github.com/amandakoster/YouHaveMail/issues"
   },
-  "homepage": "https://github.com/Woojgh/portfolio#readme"
+  "homepage": "https://github.com/amandakoster/YouHaveMail#readme"
 }
